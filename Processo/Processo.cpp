@@ -47,7 +47,7 @@ void Processo::atualizarVetor(int ref){
     if(getValue(marcador) < ref){
         for(int i= 0; i<vetorTempos.size() - marcador ;i++){
             if(i==0){
-                vetorTempos.at(i+marcador) = ref;
+                vetorTempos.at(i+marcador) = ref + 1;
             }else{
                 vetorTempos.at(i+marcador) = vetorTempos.at(i+marcador-1) + taxaAumento;
             }   

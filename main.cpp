@@ -2,6 +2,8 @@
 #include <iomanip>
 #include <stdlib.h>
 
+// choosing which lib import in case of running linux
+
 #ifdef _WIN32
 #include <Windows.h>
 #else
@@ -11,10 +13,10 @@
 #include "./Processo/Processo.h"
 // n vetores para criação de n processos
 // cada processo deve ter 20 posições
-//cada vetor 
 
 
-void Clear(){
+
+void Clear(){ // utilizar a função certa pra limpar dependendo do SO
     #if defined _WIN32
         system("cls");
 
@@ -32,7 +34,7 @@ int main(){
     int qtdProcessos;
     int qtdPosicoes;
     int menu;
-//gather das info principais
+//gather das main info
     std::vector<Processo*> vetorProcessos;
     std::cout<< "qtd processos: "<<std::endl;
     std::cin>>qtdProcessos;
@@ -100,7 +102,7 @@ int main(){
     }while(menu!=0);
 
 
-// limpeza de memória
+// limpeza dos vetores antes de encerrar
     for(auto i:vetorProcessos){
         i->~Processo();
     }
